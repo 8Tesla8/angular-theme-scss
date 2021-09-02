@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-project';
+
+  constructor() {
+    let theme = Theme.GREEN;
+
+    document.body.classList.add(theme);
+  }
+}
+
+
+enum Theme{
+  BLUE ="blue",
+  RED = "red",
+  GREEN = "green"
 }
