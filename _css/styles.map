@@ -1,0 +1,18 @@
+{
+	"version": 3,
+	"file": "styles.css",
+	"sources": [
+		"../_scss/styles.scss",
+		"../_scss/red.scss",
+		"../_scss/blue.scss",
+		"../_scss/green.scss"
+	],
+	"sourcesContent": [
+		"/* You can add global styles to this file, and also import other style files */\n\n@import \"red.scss\";\n@import \"blue.scss\";\n@import \"green.scss\";\n\n@function map-get-value($map, $key) {\n    @if map-has-key($map, $key) {\n        @return map-get($map, $key);\n    }\n    @else {\n        @error \"ERROR: Specified key #{$key} does not exist in the mapping #{map-get($map,name)}\";\n    }\n}\n\n@mixin set-theme($map) { \n    .layout{\n        background-color: map-get-value($map, background-color);\n    }\n\n    .text{\n        color: map-get-value($map, text-color);\n    }\n\n    .button{\n        background-color: map-get-value($map, button-color);\n        color: map-get-value($map, button-text-color);\n    }\n}\n\n\n//set theme\n.red {\n    @include set-theme($red-value-map);\n}\n\n.blue {\n    @include set-theme($blue-value-map);\n}\n\n.green {\n    @include set-theme($green-value-map);\n}\n",
+		"$red-value-map:(\n    name: \"red\",\n    text-color: black,\n    background-color: red,\n    button-color: white,\n    button-text-color: red,\n)\n",
+		"$blue-value-map:(\n    name: \"blue\",\n    text-color: white,\n    background-color: blue,\n    button-color: grey,\n    button-text-color: blue,\n)",
+		"$green-value-map:(\n    name: \"green\",\n    text-color: black,\n    background-color: green,\n    button-color: white,\n    button-text-color: green,\n)"
+	],
+	"names": [],
+	"mappings": "AAAA,+EAA+E;;AAgC/E,AAhBI,IAgBA,CAhBA,OAAO,CAAA;EACH,gBAAgB,ECdF,GAAG;CDepB;;;AAcL,AAZI,IAYA,CAZA,KAAK,CAAA;EACD,KAAK,ECnBG,KAAK;CDoBhB;;;AAUL,AARI,IAQA,CARA,OAAO,CAAA;EACH,gBAAgB,ECrBN,KAAK;EDsBf,KAAK,ECrBU,GAAG;CDsBrB;;;AASL,AApBI,KAoBC,CApBD,OAAO,CAAA;EACH,gBAAgB,EEdF,IAAI;CFerB;;;AAkBL,AAhBI,KAgBC,CAhBD,KAAK,CAAA;EACD,KAAK,EEnBG,KAAK;CFoBhB;;;AAcL,AAZI,KAYC,CAZD,OAAO,CAAA;EACH,gBAAgB,EErBN,IAAI;EFsBd,KAAK,EErBU,IAAI;CFsBtB;;;AAaL,AAxBI,MAwBE,CAxBF,OAAO,CAAA;EACH,gBAAgB,EGdF,KAAK;CHetB;;;AAsBL,AApBI,MAoBE,CApBF,KAAK,CAAA;EACD,KAAK,EGnBG,KAAK;CHoBhB;;;AAkBL,AAhBI,MAgBE,CAhBF,OAAO,CAAA;EACH,gBAAgB,EGrBN,KAAK;EHsBf,KAAK,EGrBU,KAAK;CHsBvB"
+}
