@@ -1,0 +1,31 @@
+// color function
+@function tint($color, $percentage) {
+    //lighter
+    @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+    //darker
+    @return mix(black, $color, $percentage);
+}
+
+$darkColor: shade(#606060, 50%);
+$lightColor: tint(#3d5721, 70%);
+
+.test-class{
+    background-color: $darkColor;
+    color: $lightColor;
+}
+
+
+//change color of icons
+
+$icon-filter: invert(16%) sepia(14%) saturate(7188%) hue-rotate(180deg) brightness(93%) contrast(96%);
+
+img {
+    // set image filter to get vendor-main color
+    // https://codepen.io/sosuke/pen/Pjoqqp
+    filter: $icon-filter;
+}
+
+

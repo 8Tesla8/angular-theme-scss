@@ -17,27 +17,22 @@
     .layout{
         background-color: map-get-value($map, background-color);
     }
-
     .text{
         color: map-get-value($map, text-color);
     }
-
     .button{
         background-color: map-get-value($map, button-color);
         color: map-get-value($map, button-text-color);
     }
 }
 
-
 //set theme
 .red {
     @include set-theme($red-value-map);
 }
-
 .blue {
     @include set-theme($blue-value-map);
 }
-
 .green {
     @include set-theme($green-value-map);
 }
